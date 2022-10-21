@@ -20,7 +20,7 @@ A module which makes connecting to Netsuite RESTlets using OAuth much easier.
 # GET
 
 ```dart
-  var getReq = {'script': '100', 'deploy': '1', 'MaterialRequestID': '3373'};
+  var getReq = {'script': '100', 'deploy': '1', 'id': '3373'};
   await client.get(baseUri.replace(queryParameters: getReq))
       .then((value) => print(value.body));
 ```
@@ -37,7 +37,7 @@ A module which makes connecting to Netsuite RESTlets using OAuth much easier.
 # DELETE
 
 ```dart
-  var delReq = {'script': '102', 'deploy': '1', 'TransferOrderId': '3575'};
+  var delReq = {'script': '102', 'deploy': '1', 'id': '3575'};
   await client.delete(baseUri.replace(queryParameters: delReq))
       .then((res) => print(res.body));
 ```
