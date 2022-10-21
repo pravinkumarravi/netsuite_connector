@@ -7,3 +7,4 @@ export 'src/netsuite_client.dart';
 export 'src/credentials.dart';
 export 'src/handlers/request_handler.dart';
 export 'src/handlers/oauth_handler.dart';
+export 'src/enum/signature_method.dart';
