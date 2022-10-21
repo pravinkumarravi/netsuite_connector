@@ -16,20 +16,20 @@ void main() async {
   RequestHandler handler = OAuthHandler(credentials: credentials);
   NetsuiteClient client = NetsuiteClient(handler: handler);
 
-  var getReq = {'script': '201', 'deploy': '1', 'MaterialRequestID': '3373'};
+  var getReq = {'script': '100', 'deploy': '1', 'id': '100'};
   await client
       .get(baseUri.replace(queryParameters: getReq))
       .then((value) => print(value.body));
 
   var payload = {"id": 2, "title": "example", "body": "lorem ipsum"};
 
-  var postReq = {'script': '211', 'deploy': '1'};
+  var postReq = {'script': '101', 'deploy': '1'};
   await client
       .post(baseUri.replace(queryParameters: postReq),
           body: jsonEncode(payload))
       .then((value) => print(value.body));
 
-  var delReq = {'script': '213', 'deploy': '1', 'TransferOrderId': '3575'};
+  var delReq = {'script': '102', 'deploy': '1', 'id': '100'};
   await client
       .delete(baseUri.replace(queryParameters: delReq))
       .then((res) => print(res.body));

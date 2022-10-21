@@ -20,7 +20,7 @@ A module which makes connecting to Netsuite RESTlets using OAuth much easier.
 # GET
 
 ```dart
-  var getReq = {'script': '100', 'deploy': '1', 'id': '3373'};
+  var getReq = {'script': '100', 'deploy': '1', 'id': '1'};
   await client.get(baseUri.replace(queryParameters: getReq))
       .then((value) => print(value.body));
 ```
@@ -37,15 +37,18 @@ A module which makes connecting to Netsuite RESTlets using OAuth much easier.
 # DELETE
 
 ```dart
-  var delReq = {'script': '102', 'deploy': '1', 'id': '3575'};
+  var delReq = {'script': '102', 'deploy': '1', 'id': '1'};
   await client.delete(baseUri.replace(queryParameters: delReq))
       .then((res) => print(res.body));
 ```
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+I built this OAuth1.0 package for netsuite
+This is the <http.BaseClient> implementation of OAuth 1.0 for Restlet API.
+
+<!-- TODO: List prerequisites and provide or point to information on how to
+start using the package. -->
 
 ## Usage
 
@@ -70,8 +73,8 @@ to `/example` folder. -->
   await client.get(baseUri.replace(queryParameters: request)).then((res) => print(res.body));
 ```
 
-## Additional information
+<!-- ## Additional information
 
 TODO: Tell users more about the package: where to find more information, how to
 contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+from the package authors, and more. -->
