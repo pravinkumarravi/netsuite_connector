@@ -44,9 +44,7 @@ const Map<String, String> oauthCredentials = {
   NetsuiteClient client = NetsuiteClient(handler: handler);
 
   var request = {'script': '215', 'deploy': '1'};
-  await client
-      .get(baseUri.replace(queryParameters: request))
-      .then((value) => print(value.body));
+  await client.get(baseUri.replace(queryParameters: request)).then((value) => print(value.body));
 ```
 
 ## Additional information
