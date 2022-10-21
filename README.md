@@ -17,6 +17,27 @@ A module which makes connecting to Netsuite RESTlets using OAuth much easier.
 
 ## Example
 
+# Installing:
+
+With Dart:
+
+```bash
+dart pub add netsuite_connector
+```
+
+This will add a line like this to your package's pubspec.yaml (and run an implicit dart pub get):
+
+```yaml
+dependencies:
+  netsuite_connector: ^1.0.0
+```
+
+Now in your Dart code, you can use:
+
+```dart
+import 'package:netsuite_connector/netsuite_connector.dart';
+```
+
 # GET
 
 ```dart
@@ -47,13 +68,7 @@ A module which makes connecting to Netsuite RESTlets using OAuth much easier.
 I built this OAuth1.0 package for netsuite
 This is the <http.BaseClient> implementation of OAuth 1.0 for Restlet API.
 
-<!-- TODO: List prerequisites and provide or point to information on how to
-start using the package. -->
-
 ## Usage
-
-<!-- TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. -->
 
 ```dart
   const Map<String, String> oauthCredentials = {
@@ -72,9 +87,3 @@ to `/example` folder. -->
   var request = {'script': '215', 'deploy': '1'};
   await client.get(baseUri.replace(queryParameters: request)).then((res) => print(res.body));
 ```
-
-<!-- ## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more. -->
