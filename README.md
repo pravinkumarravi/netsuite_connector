@@ -15,7 +15,7 @@ and the Flutter guide for
 
 A module which makes connecting to Netsuite RESTlets using OAuth much easier.
 
-## Examples
+## Example
 
 # GET
 
