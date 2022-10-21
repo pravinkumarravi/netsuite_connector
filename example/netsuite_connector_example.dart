@@ -15,8 +15,8 @@ void main() async {
   RequestHandler handler = OAuthHandler(credentials: credentials);
   NetsuiteClient client = NetsuiteClient(handler: handler);
 
-  var category = {'script': '215', 'deploy': '1'};
+  var request = {'script': '215', 'deploy': '1'};
   await client
-      .get(baseUri.replace(queryParameters: category))
+      .get(baseUri.replace(queryParameters: request))
       .then((value) => print(value.body));
 }
