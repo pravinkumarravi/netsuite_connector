@@ -66,7 +66,7 @@ RequestHandler handler = OAuthHandler(credentials: credentials, hash: SignatureM
 ```dart
   var getReq = {'script': '100', 'deploy': '1', 'id': '1'};
   await client.get(baseUri.replace(queryParameters: getReq))
-      .then((value) => print(value.body));
+      .then((res) => print(res.body));
 ```
 
 # POST
@@ -75,7 +75,7 @@ RequestHandler handler = OAuthHandler(credentials: credentials, hash: SignatureM
   var payload = {"id": 2, "title": "example", "body": "lorem ipsum"};
   var postReq = {'script': '101', 'deploy': '1'};
   await client.post(baseUri.replace(queryParameters: postReq),body: jsonEncode(payload))
-      .then((value) => print(value.body));
+      .then((res) => print(res.body));
 ```
 
 # DELETE
