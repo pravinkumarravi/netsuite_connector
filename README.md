@@ -53,9 +53,6 @@ import 'package:netsuite_connector/netsuite_connector.dart';
   Credentials credentials = Credentials(oauthCredentials);
   RequestHandler handler = OAuthHandler(credentials: credentials);
   NetsuiteClient client = NetsuiteClient(handler: handler);
-
-  var request = {'script': '215', 'deploy': '1'};
-  await client.get(baseUri.replace(queryParameters: request)).then((res) => print(res.body));
 ```
 
 Optionally you may change signature method any of following HMAC-SHA1, HMAC-SHA256, HMAC-SHA384, HMAC-SHA512
