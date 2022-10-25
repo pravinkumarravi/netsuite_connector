@@ -38,6 +38,32 @@ Now in your Dart code, you can use:
 import 'package:netsuite_connector/netsuite_connector.dart';
 ```
 
+## Usage
+
+```dart
+  const Map<String, String> oauthCredentials = {
+    'consumer_key': 'your consumer_key',
+    'consumer_secret': 'your consumer_secret',
+    'token': 'your token',
+    'token_secret': 'your token_secret',
+  };
+
+  Uri baseUri = Uri.parse('https://<ACCOUNT_ID>.restlets.api.netsuite.com/app/site/hosting/restlet.nl');
+
+  Credentials credentials = Credentials(oauthCredentials);
+  RequestHandler handler = OAuthHandler(credentials: credentials);
+  NetsuiteClient client = NetsuiteClient(handler: handler);
+
+  var request = {'script': '215', 'deploy': '1'};
+  await client.get(baseUri.replace(queryParameters: request)).then((res) => print(res.body));
+```
+
+Optionally you may change signature method any of following HMAC-SHA1, HMAC-SHA256, HMAC-SHA384, HMAC-SHA512
+
+```dart
+RequestHandler handler = OAuthHandler(credentials: credentials, hash: SignatureMethod.HMAC_SHA256);
+```
+
 # GET
 
 ```dart
@@ -67,23 +93,3 @@ import 'package:netsuite_connector/netsuite_connector.dart';
 
 I built this OAuth1.0 package for netsuite
 This is the <http.BaseClient> implementation of OAuth 1.0 for Restlet API.
-
-## Usage
-
-```dart
-  const Map<String, String> oauthCredentials = {
-    'consumer_key': 'your consumer_key',
-    'consumer_secret': 'your consumer_secret',
-    'token': 'your token',
-    'token_secret': 'your token_secret',
-  };
-
-  Uri baseUri = Uri.parse('https://<ACCOUNT_ID>.restlets.api.netsuite.com/app/site/hosting/restlet.nl');
-
-  Credentials credentials = Credentials(oauthCredentials);
-  RequestHandler handler = OAuthHandler(credentials: credentials);
-  NetsuiteClient client = NetsuiteClient(handler: handler);
-
-  var request = {'script': '215', 'deploy': '1'};
-  await client.get(baseUri.replace(queryParameters: request)).then((res) => print(res.body));
-```
