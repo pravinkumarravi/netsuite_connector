@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:netsuite_connector/netsuite_connector.dart';
 
 void main() async {
@@ -25,8 +24,7 @@ void main() async {
 
   var postReq = {'script': '101', 'deploy': '1'};
   await client
-      .post(baseUri.replace(queryParameters: postReq),
-          body: jsonEncode(payload))
+      .post(baseUri.replace(queryParameters: postReq), body: payload)
       .then((value) => print(value.body));
 
   var delReq = {'script': '102', 'deploy': '1', 'id': '100'};
