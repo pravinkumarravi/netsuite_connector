@@ -49,9 +49,26 @@ abstract class RequestHandler {
     return map1..addAll(map2);
   }
 
-  String queryString(Map<String, String> map) {
-    return Uri(
-        queryParameters:
-            map.map((key, value) => MapEntry(key, value.toString()))).query;
+  String queryString(Map params,
+      {String prefix = '&', bool inRecursion = false}) {
+    String query = '';
+
+    params.forEach((key, value) {
+      if (inRecursion) {
+        key = '[$key]';
+      }
+
+      if (value is String || value is int || value is double || value is bool) {
+        query += '$prefix$key=$value';
+      } else if (value is List || value is Map) {
+        if (value is List) value = value.asMap();
+        value.forEach((k, v) {
+          query +=
+              queryString({k: v}, prefix: '$prefix$key', inRecursion: true);
+        });
+      }
+    });
+
+    return query.substring(1);
   }
 }
