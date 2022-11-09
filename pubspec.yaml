@@ -1,9 +1,8 @@
 name: netsuite_connector
 description: A module which makes connecting to Netsuite RESTlets using OAuth much easier.
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/pravinkumarravi/netsuite_connector
 license: Apache-2.0
-author: pravinkumarravi <pravinkumar.ravi@gmail.com>
 url: https://github.com/pravinkumarravi/netsuite-connector
 
 environment:

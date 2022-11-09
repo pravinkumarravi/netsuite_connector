@@ -68,7 +68,16 @@ abstract class RequestHandler {
         });
       }
     });
+    return filterQueryString(query.substring(1));
+  }
 
-    return query.substring(1);
+  String filterQueryString(String string) {
+    return string
+        .replaceAll('!', "%21")
+        .replaceAll('*', "%2A")
+        .replaceAll('\'', "%27")
+        .replaceAll('(', "%28")
+        .replaceAll(')', "%29")
+        .replaceAll(',', "%2C");
   }
 }
