@@ -74,7 +74,7 @@ RequestHandler handler = OAuthHandler(credentials: credentials, hash: SignatureM
 ```dart
   var payload = {"id": 2, "title": "example", "body": "lorem ipsum"};
   var postReq = {'script': '101', 'deploy': '1'};
-  await client.post(baseUri.replace(queryParameters: postReq),body: jsonEncode(payload))
+  await client.post(baseUri.replace(queryParameters: postReq),body: payload)
       .then((res) => print(res.body));
 ```
 
