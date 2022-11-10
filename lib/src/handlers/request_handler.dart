@@ -76,6 +76,8 @@ abstract class RequestHandler {
         .replaceAll('!', "%21")
         .replaceAll('*', "%2A")
         .replaceAll('\'', "%27")
+        .replaceAll('/', "%2F")
+        .replaceAll('\\', "%5C")
         .replaceAll('(', "%28")
         .replaceAll(')', "%29")
         .replaceAll(',', "%2C");
