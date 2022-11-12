@@ -80,6 +80,7 @@ abstract class RequestHandler {
         .replaceAll('\\', "%5C")
         .replaceAll('(', "%28")
         .replaceAll(')', "%29")
-        .replaceAll(',', "%2C");
+        .replaceAll(',', "%2C")
+        .replaceAll(':', "%3A");
   }
 }
